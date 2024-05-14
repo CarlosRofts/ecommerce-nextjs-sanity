@@ -1,22 +1,13 @@
 import Image from 'next/image';
 import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Newest from './components/Newest';
 
 export default function Home() {
 	return (
-		<>
-			<Navbar />
-			<main className="flex min-h-screen flex-col items-center justify-between p-24">
-				<div className="flex flex-row justify-center items-center">
-					<Image
-						className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-						src="/next.svg"
-						alt="Next.js Logo"
-						width={180}
-						height={37}
-						priority
-					/>
-				</div>
-			</main>
-		</>
+		<div className="bg-white pb-6 sm:pb-8 lg:pb-12">
+			<Hero />
+			<Newest />
+		</div>
 	);
 }
