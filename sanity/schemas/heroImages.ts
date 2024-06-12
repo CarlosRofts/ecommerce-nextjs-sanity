@@ -1,3 +1,5 @@
+import { title } from "process";
+
 export default {
   name: 'heroImage',
   type: 'document',
@@ -13,5 +15,10 @@ export default {
       type: 'image',
       title: 'Second Image',
     },
+    {
+      name: "image3",
+      type: 'image',
+      title: "3"
+    }
   ],
 }
