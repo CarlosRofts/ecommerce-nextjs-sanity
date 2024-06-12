@@ -48,7 +48,7 @@ Estilo y tendencia sin comparación. Ven, compra y siente la diferencia.
 			<div className="h-1/2 min-h-96 w-full bg-cover bg-no-repeat bg-center " style={{backgroundImage: `url("${urlFor(data.image3).url()}")`}}></div>
 
 			{/* brands */}
-			<div>ALGUNAS DE NUESTRAS MARCAS</div>
+			{/* <div>ALGUNAS DE NUESTRAS MARCAS</div> */}
 
 			{/* hero footer */}
 			{/* <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
