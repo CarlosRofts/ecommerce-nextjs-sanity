@@ -1,12 +1,18 @@
 import Image from 'next/image';
 import { client, urlFor } from '../lib/sanity';
 import Link from 'next/link';
+import {Anton} from 'next/font/google'
+
+const anton = Anton({
+weight: '400',
+subsets: ['latin'],
+})
 
 async function getData() {
 	const query = "*[_type == 'heroImage'][0]";
 
 	const data = await client.fetch(query);
-
+	// console.log(data)
 	return data;
 }
 
@@ -17,9 +23,10 @@ export default async function Hero() {
 			{/* img & hero text */}
 			<div className="mb-8 flex flex-wrap justify-between md:mb-16 ">
 				<div className="mb-6 flex w-full flex-col justify-center sm:mb-12 lg:mb-0 lg:w-1/3 ">
-					<h1 className="mb-4 text-4xl font-bold text-black sm:text-5xl md:mb-8 md:text-6xl">Fashion Excellence at Unbeatable Prices!</h1>
+					<h1 className={`${anton.className} mb-4 text-4xl font-bold text-black sm:text-5xl md:mb-8 md:text-6xl`}>¡Vístete con estilo sin gastar de más!
+</h1>
 					<p className="max-w-md leading-relaxed text-gray-500 xl:text-lg">
-						Discover the pinnacle of luxury and quality. Shop with us and experience the best.
+Estilo y tendencia sin comparación. Ven, compra y siente la diferencia.
 					</p>
 				</div>
 
@@ -37,8 +44,14 @@ export default async function Hero() {
 				</div>
 			</div>
 
+			{/* banner */}
+			<div className="h-1/2 min-h-96 w-full bg-cover bg-no-repeat bg-center " style={{backgroundImage: `url("${urlFor(data.image3).url()}")`}}></div>
+
+			{/* brands */}
+			<div>ALGUNAS DE NUESTRAS MARCAS</div>
+
 			{/* hero footer */}
-			<div className="flex flex-col items-center justify-between gap-8 md:flex-row">
+			{/* <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
 				<div className="flex h-12 w-64 divide-x overflow-hidden rounded-lg border">
 					<Link href="/Men" className="flex w-1/3 items-center justify-center text-gray-500 transition duration-100 hover:bg-gray-100 active:bg-gray-200">
 						Men
@@ -56,7 +69,7 @@ export default async function Hero() {
 						Teens
 					</Link>
 				</div>
-			</div>
+			</div> */}
 		</section>
 	);
 }
